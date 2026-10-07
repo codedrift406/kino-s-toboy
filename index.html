@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff0f5">
+  <meta name="description" content="Маленькое приглашение на один очень милый вечер. Ты, я и кино.">
+  <title>Пойдём в кино? 💗</title>
+  <script>document.documentElement.classList.add('intro-loading');</script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23fff0f5'/%3E%3Cpath d='M32 49 13 30C2 16 22 6 32 21 42 6 62 16 51 30Z' fill='%23ed548c'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="intro.css">
+  <link rel="stylesheet" href="mobile.css">
+  <link rel="preload" as="image" href="assets/unicorn.png">
+  <script src="app.js" defer></script>
+  <script src="intro.js" defer></script>
+  <noscript><style>.intro-screen{display:none!important}</style></noscript>
+</head>
+<body>
+  <div class="intro-screen" id="intro-screen" role="region" aria-label="Волшебное приглашение">
+    <svg class="intro-curtain" viewBox="-500 -500 1000 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <radialGradient id="intro-pink"><stop offset="0" stop-color="#fff8fb"/><stop offset=".6" stop-color="#fff0f6"/><stop offset="1" stop-color="#ffd7e6"/></radialGradient>
+        <mask id="heart-reveal-mask" maskUnits="userSpaceOnUse" x="-500" y="-500" width="1000" height="1000" style="mask-type:luminance">
+          <rect x="-500" y="-500" width="1000" height="1000" fill="white"/>
+          <path id="heart-aperture" d="M0 8C-3 5-11 0-11-6C-11-12-3-14 0-8C3-14 11-12 11-6C11 0 3 5 0 8Z" fill="black" transform="scale(0)"/>
+        </mask>
+      </defs>
+      <rect x="-500" y="-500" width="1000" height="1000" fill="url(#intro-pink)" mask="url(#heart-reveal-mask)"/>
+    </svg>
+    <div class="intro-content">
+      <p class="intro-label">для кое-кого особенного</p>
+      <h2 class="intro-title">Немного магии.<br><em>И один маленький вопрос.</em></h2>
+      <div class="unicorn-stage">
+        <span class="unicorn-shadow" aria-hidden="true"></span>
+        <div class="unicorn-runner"><img class="unicorn-image" id="unicorn-image" src="assets/unicorn.png" width="1536" height="1024" alt="Белый единорог с розовой гривой спешит к тебе" fetchpriority="high"></div>
+      </div>
+      <svg class="intro-small-heart" viewBox="-13 -14 26 26" aria-hidden="true"><path d="M0 8C-3 5-11 0-11-6C-11-12-3-14 0-8C3-14 11-12 11-6C11 0 3 5 0 8Z"/></svg>
+      <p class="intro-caption">К тебе спешит одно приглашение…</p>
+    </div>
+    <button class="intro-skip" id="intro-skip" type="button">Пропустить волшебство</button>
+  </div>
+  <div class="page-shell">
+    <header class="page-header">
+      <a class="wordmark" href="./" aria-label="В начало приглашения"><span class="brand-heart" aria-hidden="true">♥</span> для тебя<span class="wordmark-dot">.</span></a>
+      <span class="header-note">одно приглашение. два билета.</span>
+      <span class="small-heart" aria-hidden="true">♡</span>
+    </header>
+    <main>
+      <section class="invitation" id="invitation" aria-labelledby="invite-title">
+        <div class="hero-copy">
+          <span class="eyebrow"><span aria-hidden="true">✦</span> у меня к тебе маленький вопрос</span>
+          <p class="pretitle">Есть идея…</p>
+          <h1 id="invite-title">Пойдём<br><em>в кино?</em><span class="title-heart" aria-hidden="true">♡</span></h1>
+          <p class="intro">Хочу взять большой попкорн<br>и провести этот вечер с тобой.</p>
+          <div class="actions" id="actions">
+            <button class="yes-button" id="yes-button" type="button">Да, пойдём! <span aria-hidden="true">♥</span></button>
+            <span class="no-placeholder"><button class="no-button" id="no-button" type="button" aria-describedby="playful-note">Нет, не пойду</button></span>
+          </div>
+          <p class="playful-note" id="playful-note" role="status" aria-live="polite">Спойлер: котик очень надеется на «да».</p>
+        </div>
+        <div class="hero-art" id="hero-art">
+          <div class="art-halo" aria-hidden="true"></div>
+          <span class="art-spark spark-one" aria-hidden="true">✧</span>
+          <span class="art-spark spark-two" aria-hidden="true">✦</span>
+          <span class="art-heart heart-one" aria-hidden="true">♡</span>
+          <img class="kitten-image" id="kitten-image" src="assets/kitten.png" width="1475" height="1066" alt="Милый белый котик с розовым сердечком, цветами и попкорном" fetchpriority="high">
+          <div class="floating-note"><span class="note-heart" aria-hidden="true">♥</span><span>попкорн за мной<br><small>улыбка — за тобой</small></span></div>
+          <div class="mini-ticket" aria-hidden="true"><span class="ticket-mark">♡</span><div><small>БИЛЕТ НА МИЛЫЙ ВЕЧЕР</small><strong>ты + я + кино</strong></div><span class="ticket-stub">02</span></div>
+        </div>
+        <div class="date-promises" aria-label="План на вечер">
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="14" rx="3"/><path d="m3 7 16-4 2 4M7 6l3-4m3 3 3-4M3 12h18"/></svg>Хороший фильм</span>
+          <span class="promise-dot" aria-hidden="true">✦</span>
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 10 2 11h10l2-11ZM9 10l1 11m5-11-1 11M6 10c-3-3-1-6 2-5 0-5 6-5 7-1 4-1 6 3 3 6"/></svg>Попкорн на двоих</span>
+          <span class="promise-dot" aria-hidden="true">✦</span>
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21 3 12C-3 4 7-1 12 6c5-7 15-2 9 6Z"/></svg>Лучшая компания</span>
+        </div>
+      </section>
+      <section class="celebration" id="celebration" aria-labelledby="success-title" hidden>
+        <span class="success-eyebrow">ТЕПЕРЬ ЭТО НАШ ПЛАН</span>
+        <h2 id="success-title" tabindex="-1">Ура! <em>Это свидание.</em></h2>
+        <p class="success-copy">Уже улыбаюсь, как этот котик.<br>Осталось выбрать фильм — и сесть рядом.</p>
+        <div class="big-ticket">
+          <div class="big-ticket-main"><span class="ticket-label">ПРИГЛАШЕНИЕ В КИНО</span><strong>Ты. Я. И большой попкорн.</strong><p>Два места рядом <span aria-hidden="true">♡</span></p><div class="ticket-details"><span>ДАТА<strong>Выберем вместе</strong></span><span>ДРЕСС-КОД<strong>Твоя улыбка</strong></span></div></div>
+          <div class="big-ticket-stub"><span aria-hidden="true">♥</span><small>НАС</small><strong>02</strong></div>
+        </div>
+        <p class="success-note">Напиши мне «да» — и договоримся о нашем вечере 💌</p>
+        <button class="restart-button" id="restart-button" type="button">Ещё раз посмотреть приглашение</button>
+      </section>
+    </main>
+    <footer><span>Сделано с трепетом.</span><span>И немного с хитростью <span aria-hidden="true">♡</span></span></footer>
+  </div>
+  <div class="confetti-layer" id="confetti" aria-hidden="true"></div>
+</body>
+</html>
