@@ -1,0 +1,10 @@
+.notification-status{max-width:560px;overflow-wrap:anywhere}
+.notification-status[data-notification-state="pending"]{color:#946378}
+.notification-status[data-notification-state="failed"]{color:#8d385d;margin-bottom:13px}
+.notification-retry{display:inline-flex;align-items:center;justify-content:center;min-height:48px;max-width:100%;margin:0 0 22px;padding:12px 22px;border:1px solid #e8a8c1;border-radius:14px;background:#fff0f6;color:#a72a5b;font:600 14px/1.5 InvitationSans,'Segoe UI',sans-serif;box-shadow:0 5px 15px #c04d7310;transition:background .2s,border-color .2s,transform .2s}
+.notification-retry:hover{background:#ffe4ef;border-color:#ce6990;transform:translateY(-1px)}
+.notification-retry:active{transform:translateY(0)}
+.notification-retry:focus-visible{outline:3px solid #be2861;outline-offset:4px}
+.notification-retry:disabled{cursor:wait;opacity:.7}
+@media(max-width:760px){.notification-status{width:100%;font-size:1rem;line-height:1.65}.notification-retry{min-height:48px;padding:12px 18px;font-size:1rem}}
+@media(prefers-reduced-motion:reduce){.notification-retry{transition:none}.notification-retry:hover{transform:none}}

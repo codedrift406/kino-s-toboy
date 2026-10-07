@@ -74,6 +74,7 @@ function acceptInvitation() {
   celebration.hidden = false;
   document.title = 'Это свидание! 💗';
   document.querySelector('#success-title').focus({ preventScroll: true });
+  window.dispatchEvent(new Event('cinema-accepted'));
   window.scrollTo({ top: 0, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
   if (!reducedMotion.matches) {
     const fragment = document.createDocumentFragment();
@@ -122,7 +123,7 @@ if (document.modelContext?.registerTool) {
     Promise.resolve(document.modelContext.registerTool({
       name: 'accept_cinema_invitation',
       title: 'Принять приглашение в кино',
-      description: 'Принять приглашение и показать билет на свидание. Обновляет только текущую страницу, не отправляет сообщений.',
+      description: 'Принять приглашение и показать билет на свидание. Если настроен сервер уведомлений, автоматически сообщить автору приглашения о согласии через Telegram.',
       inputSchema: { type: 'object', properties: {}, additionalProperties: false },
       annotations: { readOnlyHint: false, untrustedContentHint: false },
       execute(input) {
